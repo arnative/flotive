@@ -1,0 +1,40 @@
+# Node dependencies
+node_modules/
+
+# SvelteKit, Vite & Cloudflare build outputs
+/.svelte-kit
+/build
+dev-dist/
+.wrangler/
+
+# Environment & local secrets
+.env
+.env.*
+!.env.example
+!.env.test
+.dev.vars
+
+# Local dev database
+flotive-local.db
+flotive-local.db-journal
+flotive-local.db-wal
+flotive-local.db-shm
+*.db
+*.db-journal
+*.sqlite
+*.sqlite-journal
+
+# IDEs & OS files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Temporary files & logs
+npm-debug.log*
+.audit/
+.od-skills/
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Internal documentation
+DESIGN.md

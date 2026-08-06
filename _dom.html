@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="id" class="dark"><head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="robots" content="noindex, nofollow">
+		<title>Flotive ΓÇö Manajemen Keuangan</title>
+		<meta name="text-scale" content="scale">
+		<meta name="theme-color" content="#121212">
+		<link rel="preconnect" href="https://unpkg.com" crossorigin="">
+		<link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" media="all" onload="this.media='all'">
+		<link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" media="all" onload="this.media='all'">
+		<noscript>
+			<link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+			<link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+		</noscript>
+		<link rel="manifest" href="/manifest.json">
+		<link rel="icon" href="/favicon.ico" sizes="any">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+		<link rel="icon" type="image/png" href="/favicon.png">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png">
+		<script>
+			(function () {
+				try {
+					var t = localStorage.getItem('flotive-theme') || localStorage.getItem('floty-theme');
+					var dark;
+					if (t === 'light') dark = false;
+					else if (t === 'system')
+						dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+					else dark = true; // 'dark' atau belum diatur ΓåÆ dark (default awal)
+					document.documentElement.classList.toggle('dark', dark);
+				} catch (e) {}
+			})();
+			window.deferredPwaPrompt = null;
+			window.addEventListener('beforeinstallprompt', function (e) {
+				e.preventDefault();
+				window.deferredPwaPrompt = e;
+			});
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.getRegistrations().then(function (registrations) {
+					for (var i = 0; i < registrations.length; i++) {
+						registrations[i].unregister();
+					}
+				});
+			}
+			window.addEventListener('error', function (e) {
+				if (e && e.target && (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK')) {
+					var reloaded = sessionStorage.getItem('flotive-sw-cleaned');
+					if (!reloaded) {
+						sessionStorage.setItem('flotive-sw-cleaned', '1');
+						if ('caches' in window) caches.keys().then(function(keys) { keys.forEach(function(k) { caches.delete(k); }); });
+						window.location.reload();
+					}
+				}
+			}, true);
+		</script>
+		
+		<link href="./_app/immutable/assets/select.CV-KWLNP.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/0.DgbJ3rgM.css" rel="stylesheet">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+			<script>
+				{
+					__sveltekit_8r8llh = {
+						base: new URL(".", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("./_app/immutable/entry/start.5dyHzb4_.js"),
+						import("./_app/immutable/entry/app.Bfok3viu.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element);
+					});
+				}
+			</script>
+		</div>
+	<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;a9a4e916a83a4dbcaa0782590ca34c75&quot;,&quot;r&quot;:1}" crossorigin="anonymous"></script>
+
+
+
+</body></html>

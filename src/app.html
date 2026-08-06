@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id" class="dark">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<meta name="robots" content="noindex, nofollow" />
+		<title>Flotive — Manajemen Keuangan</title>
+		<meta name="text-scale" content="scale" />
+		<meta name="theme-color" content="#121212" />
+		<link rel="manifest" href="/manifest.json" />
+		<link rel="icon" href="/favicon.ico" sizes="any" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
+		<script>
+			(function () {
+				try {
+					var t = localStorage.getItem('flotive-theme') || localStorage.getItem('floty-theme');
+					var dark;
+					if (t === 'light') dark = false;
+					else if (t === 'system') dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+					else dark = true; // 'dark' atau belum diatur → dark (default awal)
+					document.documentElement.classList.toggle('dark', dark);
+				} catch (e) {}
+			})();
+			window.deferredPwaPrompt = null;
+			window.addEventListener('beforeinstallprompt', function (e) {
+				e.preventDefault();
+				window.deferredPwaPrompt = e;
+			});
+			// Self-heal: bila ada asset/chunk yang gagal dimuat (mis. cache PWA/HTTP
+			// masih menyimpan chunk dari build lama setelah redeploy), bersihkan
+			// cache dan muat ulang sekali per sesi agar tidak macet di layar kosong.
+			window.addEventListener(
+				'error',
+				function (e) {
+					if (e && e.target && (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK')) {
+						var reloaded = sessionStorage.getItem('flotive-cache-clear');
+						if (!reloaded) {
+							sessionStorage.setItem('flotive-cache-clear', '1');
+							if ('caches' in window)
+								caches.keys().then(function (keys) {
+									keys.forEach(function (k) {
+										caches.delete(k);
+									});
+								});
+							window.location.reload();
+						}
+					}
+				},
+				true
+			);
+		</script>
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>

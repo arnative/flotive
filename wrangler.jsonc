@@ -1,0 +1,17 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "flotive",
+	// Konfigurasi Cloudflare Pages (bukan Workers). Wajib ada agar Pages
+	// menemukan hasil build SvelteKit (adapter-cloudflare).
+	"pages_build_output_dir": ".svelte-kit/cloudflare",
+	"compatibility_date": "2026-08-01",
+	"compatibility_flags": ["nodejs_als", "nodejs_compat"],
+	// Binding D1 untuk Pages Functions (dibaca dari wrangler config di CI Pages).
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "flotive",
+			"database_id": "0fd87251-0f03-4323-aa85-0663955484a4"
+		}
+	]
+}
