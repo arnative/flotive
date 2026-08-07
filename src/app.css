@@ -37,6 +37,9 @@
 	--color-info: var(--info);
 	--color-info-foreground: var(--info-foreground);
 
+	--color-brand: var(--brand);
+	--color-brand-foreground: var(--brand-foreground);
+
 	--font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
@@ -73,6 +76,9 @@
 	--warning-foreground: oklch(0.99 0.001 177.6);
 	--info: oklch(0.588 0.138 242.4);
 	--info-foreground: oklch(0.99 0.001 177.6);
+
+	--brand: oklch(0.55 0.16 175);
+	--brand-foreground: oklch(0.99 0.001 177.6);
 }
 
 /* Dark Theme */
@@ -103,6 +109,9 @@
 	--warning-foreground: oklch(0.18 0.001 177.6);
 	--info: oklch(0.717 0.138 235.3);
 	--info-foreground: oklch(0.18 0.001 177.6);
+
+	--brand: oklch(0.68 0.16 175);
+	--brand-foreground: oklch(0.08 0.02 175);
 }
 
 @layer base {

@@ -66,8 +66,8 @@
 <DropdownMenu>
 	<DropdownMenuTrigger
 		class={collapsed
-			? 'flex h-10 w-full cursor-pointer items-center justify-center rounded-lg border border-input bg-card text-sm font-medium text-foreground transition-colors hover:bg-muted'
-			: 'flex w-full cursor-pointer items-center justify-between gap-2.5 rounded-lg border border-input bg-card p-3 text-sm font-medium text-foreground transition-colors hover:bg-muted'}
+			? 'flex h-10 w-full cursor-pointer items-center justify-center rounded-xl border border-input bg-card text-sm font-medium text-foreground transition-colors hover:bg-muted'
+			: 'flex h-11 w-full cursor-pointer items-center justify-between gap-2.5 rounded-xl border border-input bg-card px-3 text-sm font-medium text-foreground transition-colors hover:bg-muted'}
 		title={auth.activeWorkspace?.name ?? 'Workspace'}
 	>
 		{#if collapsed}

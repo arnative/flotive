@@ -195,7 +195,7 @@
 		<main
 			class="flex-1 overflow-y-auto pb-[calc(5rem+env(safe-area-inset-bottom))] outline-none md:rounded-2xl md:border md:border-border md:bg-background md:pb-0"
 		>
-			<div class="mx-auto w-full max-w-7xl p-6 md:p-10 lg:p-12">
+			<div class="mx-auto w-full max-w-7xl p-4 md:p-10 lg:p-12">
 				{@render children?.()}
 			</div>
 		</main>
@@ -205,7 +205,7 @@
 			<Button
 				onclick={handleFabClick}
 				size="icon-lg"
-				class="fixed right-4 bottom-[calc(5rem+env(safe-area-inset-bottom))] z-40 flex size-12 items-center justify-center rounded-full bg-[oklch(0.55_0.16_175)] p-0 text-white shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 md:hidden dark:bg-[oklch(0.68_0.16_175)] dark:text-[oklch(0.08_0.02_175)]"
+				class="fixed right-4 bottom-[calc(5rem+env(safe-area-inset-bottom))] z-40 flex size-12 items-center justify-center rounded-full bg-brand p-0 text-brand-foreground shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 md:hidden dark:bg-brand dark:text-brand-foreground"
 				aria-label={fabAction.label}
 				title={fabAction.label}
 			>
