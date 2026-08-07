@@ -1,5 +1,6 @@
 <script lang="ts">
 	let { class: className = 'h-6 w-auto text-foreground' }: { class?: string } = $props();
+	const uid = crypto.randomUUID();
 </script>
 
 <svg
@@ -21,11 +22,11 @@
 	<!-- Symbol icon mark -->
 	<path
 		d="M254.382,196.858l0,48.575c-63.354,0 -119.381,31.603 -153.189,79.878l-7.252,10.355l-93.941,0l0,-196.858l48.575,-0l-0,148.283l20.51,0.001c43.115,-54.93 110.117,-90.234 185.297,-90.234Zm-205.806,-58.049l-0,-48.575c63.354,0 119.381,-31.603 153.189,-79.878l7.252,-10.355l93.941,0l0,196.858l-48.575,-0l0,-148.283l-20.51,-0.001c-43.115,54.93 -110.117,90.234 -185.297,90.234Z"
-		fill="url(#_Radial1_flotive_logo)"
+		fill="url(#{uid}_flotive_logo)"
 	/>
 	<defs>
 		<radialGradient
-			id="_Radial1_flotive_logo"
+			id="{uid}_flotive_logo"
 			cx="0"
 			cy="0"
 			r="1"
